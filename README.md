@@ -16,6 +16,10 @@ After, do a new commit for all
 git commit -m "New combined commit"
 ```
 Push to remote with --force-with-lease (safer than --force)
+
+--force = overwrite the remote branch no matter what
+
+--force-with-lease = overwrite only if nobody else changed it, only if you are not cloberring anyone
 ```
 git push --force-with-lease origin <branch-name>
 ```
