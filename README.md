@@ -19,3 +19,13 @@ Push to remote with --force-with-lease (safer than --force)
 ```
 git push --force-with-lease origin <branch-name>
 ```
+**Method 2: git rebase, rewrites the last N commits one by one, let you edit history carefully**
+
+Rebase interactively to the last 'N+1'th commit of your branch
+```
+git rebase -i HEAD~N
+```
+force-push is needed after rebase -i, because commit hashes change: remote branch history no longer matches
+```
+git push --force-with-lease
+```
