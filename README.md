@@ -5,13 +5,17 @@ Git Practice
 In git, commits are not "owned" by a branch. Instead they are shared among branches
 
 ## Squash commits into one
+**Method 1: git reset, deletes history and starts over, simple, blunt, and quick**
 
 Move HEAD back by N commits you want to squash, this will delete those commits and stage their changes for next step
-
 ```
 git reset --soft HEAD~N
 ```
 After, do a new commit for all
 ```
 git commit -m "New combined commit"
+```
+Push to remote with --force-with-lease (safer than --force)
+```
+git push --force-with-lease origin <branch-name>
 ```
